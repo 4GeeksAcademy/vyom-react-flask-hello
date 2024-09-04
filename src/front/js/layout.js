@@ -12,6 +12,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import RegisterForm from "./component/RegisterForm.jsx";
 import LoginForm from "./component/LoginForm.jsx";
+import PrivateList from "./component/PrivateList.jsx";
 
 //create your first component
 const Layout = () => {
@@ -26,11 +27,12 @@ const Layout = () => {
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Navbar />
-                    <div className="w-75 mx-auto text-center text-white h-75 d-flex flex-column justify-content-center align-items-center">
+                    <div className="h-100 w-100 text-center text-white d-flex flex-column justify-content-center align-items-center">
                         <Routes>
                             <Route element={<Home />} path="/" />
                             <Route element={<RegisterForm />} path="/signup" />
                             <Route element={<LoginForm />} path="/login" />
+                            <Route element={<PrivateList />} path="/private"/>
                             <Route element={<h1>Not found!</h1>} />
                         </Routes>
                     </div>

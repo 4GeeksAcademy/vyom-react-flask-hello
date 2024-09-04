@@ -9,11 +9,9 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="w-75 mx-auto text-center text-white h-75 d-flex flex-column justify-content-center align-items-center">
-			<Routes>
-				<Route element={<RegisterForm />} path="/signup" />
-				<Route element={<LoginForm />} path="/login" />
-			</Routes>
+		<div style={{background: '#100E11'}} className=" w-100 h-100 mx-auto text-center text-white d-flex flex-column justify-content-center align-items-center">
+			<h1>Hola campeon! estas en casa, descansa en la hoguera!</h1>
+			<img src="https://steamuserimages-a.akamaihd.net/ugc/169289717866283092/C294AAC7AA3123748D598C3A16D07AEAAAD846C0/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"></img>
 		</div>
 	);
 };
