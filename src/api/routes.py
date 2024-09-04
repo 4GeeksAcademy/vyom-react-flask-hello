@@ -33,14 +33,11 @@ def get_users_list():
         list_users = [user.serialize() for user in users]
 
         if not list_users:
-            # Devuelve una lista vacía con un código de estado 200
             return jsonify({'results': []}), 200
 
         return jsonify({'results': list_users}), 200
 
     except Exception as e:
-        # Registra el error para análisis (si tienes configurado un logger)
-        # logger.error('Error en get_users_list: ' + str(e))
         return jsonify({'error': 'Falla en el servidor'}), 500
 
 

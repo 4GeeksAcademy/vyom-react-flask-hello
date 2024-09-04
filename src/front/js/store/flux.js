@@ -82,9 +82,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			
 					if (!response.ok) {
-						// Captura el mensaje de error devuelto por el servidor
 						const errorData = await response.json();
-						// console.log('Error del servidor:', errorData.error);
 						throw new Error(errorData.error);
 					}
 			
