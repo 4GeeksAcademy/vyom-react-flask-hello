@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../store/appContext'
+import { useNavigate } from 'react-router-dom'
 const LoginForm = () => {
     const [isPassword, setIsPassword] = useState(false)
     const { actions, store } = useContext(Context)
+    const navigate = useNavigate()
+    
 
     let colorInput = '#262128'
 
@@ -15,8 +18,11 @@ const LoginForm = () => {
         console.log(data_login)
         actions.loginUser(data_login)
 
-        e.target.email.value = ""
-        e.target.password.value = ""
+        // e.target.email.value = ""
+        // e.target.password.value = ""
+        if(store.toker_user){
+            navigate('/private')
+        }
     }
 
     return (

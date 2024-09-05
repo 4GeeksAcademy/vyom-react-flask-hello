@@ -12,7 +12,7 @@ const PrivateList = () => {
     return (
         <>
             {store.token_user ? (
-                <div className='d-flex p-5 flex-column gap-4 fs-5 align-items-center justify-content-center' style={{background: '#0b3b66', borderRadius: '10px' }}>
+                <div className='d-flex p-5 flex-column gap-4 fs-5 align-items-center justify-content-center' style={{background: '#343449', borderRadius: '10px' }}>
                     <h1>List Users</h1>
                     <button onClick={handleClick} className='btn btn-primary'>Get Users</button>
                     {list.length > 0 ? (

@@ -64,7 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						alert('Registro exitoso')
 						console.log(data)
 					} else {
-						alert('Algo salio mal')
+						alert('Algo malio sal')
 					}
 
 				} catch (e) {
@@ -87,20 +87,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 			
 					const data = await response.json();
-					console.log('Datos del usuario logeado: ', data);
 			
 					if (data.access_token) {
 						alert('Iniciaste sesion')
 						setStore({ token_user: data.access_token });
-						console.log('Bienvenido', data.user_name);
-			
-						localStorage.setItem('token', data.access_token);
-						localStorage.setItem('email', data.email);
+						localStorage.setItem('token', data.access_token)
 					} else {
-						console.log('Algo salió mal');
+						console.log('Algo malio sal');
 					}
 			
 				} catch (error) {
+					alert(error.message)
 					console.log('Error al intentar hacer el login:', error.message);
 				}
 			},
@@ -131,7 +128,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error(`Error al pedir datos desde usuario:`);
 						return ;
 					}
-			
 			
 					if (data.results) {
 						console.log(data.results);

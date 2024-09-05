@@ -1,14 +1,20 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	const { actions, store } = useContext(Context)
+	const navigate = useNavigate()
 
 	const handleClick = () => {
 		localStorage.removeItem('token')
 		actions.changeValueTokenUser()
-		alert('Cerraste sesion')
+
+		if(!store.token_user) {
+			alert('Cerraste sesion')
+			navigate('/login')
+		}
+		
 	}
 
 	return (
