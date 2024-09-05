@@ -51,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			createUser: async (info_user) => {
 				try {
-					let response = await fetch('https://solid-winner-x79rvx767v5h65gv-3001.app.github.dev/api/register', {
+					let response = await fetch(process.env.BACKEND_URL + `/api/register`, {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			loginUser: async (data_user) => {
 				try {
-					const response = await fetch('https://solid-winner-x79rvx767v5h65gv-3001.app.github.dev/api/login', {
+					const response = await fetch(process.env.BACKEND_URL + '/api/login', {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			
 				try {
-					const response = await fetch('https://solid-winner-x79rvx767v5h65gv-3001.app.github.dev/api/users', {
+					const response = await fetch(process.env.BACKEND_URL + '/api/users', {
 						method: 'GET',
 						headers: {
 							Authorization: `Bearer ${token_user}`
